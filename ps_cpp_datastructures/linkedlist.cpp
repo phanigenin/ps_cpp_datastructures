@@ -5,16 +5,7 @@
 
 using namespace std;
 
-/*
-void Node::printList(Node *n)
-{
-	while (n != NULL)
-	{
-		cout << n->data << endl;
-		n = n->next;
-    }
-}
-*/
+// add a Node to Linkedlist. if it is empty, create headnode
 void LinkedList::addNode(int nextData)
 {
 	if (this->head == NULL)
@@ -29,6 +20,7 @@ void LinkedList::addNode(int nextData)
 	this->last = nextnode;
 }
 
+// traverse a given LinkedList.
 void LinkedList::printLinkedList()
 {
 	Node* curr = this->head;
