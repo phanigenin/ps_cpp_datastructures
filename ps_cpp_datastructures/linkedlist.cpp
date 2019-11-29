@@ -6,27 +6,36 @@
 using namespace std;
 
 // add a Node to Linkedlist. if it is empty, create headnode
-void LinkedList::addNode(int nextData)
+template <typename T>
+void LinkedList<T>::addNode(T nextData)
 {
 	if (this->head == NULL)
 	{
-		this->head = new Node(nextData);
+		this->head = new Node<T>(nextData);
 		this->last = this->head;
 		return;
 	}
 
-	Node* nextnode = new Node(nextData);
+	Node<T>* nextnode = new Node<T>(nextData);
 	this->getLastNode()->next = nextnode;
 	this->last = nextnode;
 }
 
 // traverse a given LinkedList.
-void LinkedList::printLinkedList()
+template <typename T>
+void LinkedList<T>::printLinkedList()
 {
-	Node* curr = this->head;
+	Node<T>* curr = this->head;
 	while (curr!=NULL)
 	{
 		cout << curr->data << endl;
 		curr = curr->next;
 	}
 }
+
+/*
+void TemporaryFunction()
+{
+	LinkedList<int> TempObj;
+}
+*/

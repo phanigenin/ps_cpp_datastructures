@@ -1,10 +1,12 @@
 #pragma once
+
+template <typename T>
 class Node {
 public:
-	int data;
+	T data;
 	Node* next;
 
-	Node(int input)
+	Node(T input)
 	{
 		data = input;
 	}
@@ -12,15 +14,16 @@ public:
 };
 
 
+template <typename T>
 class LinkedList {
 
 public:
-	Node* head;
-	Node* last;
+	Node<T>* head;
+	Node<T>* last;
 
-	LinkedList(int headData)
+	LinkedList(T headData)
 	{
-		head = new Node(headData);
+		head = new Node<T>(headData);
 		last = head;
 	}
 
@@ -30,8 +33,8 @@ public:
 		last = NULL;
 	}
 
-	void addNode(int nextData);
-	Node* getLastNode()
+	void addNode(T nextData);
+	Node<T>* getLastNode()
 	{
 		return this->last;
 	}
